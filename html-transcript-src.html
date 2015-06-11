@@ -7,8 +7,9 @@
             async class='remove'></script>
     <script class='remove'>
       var respecConfig = {
-          specStatus: "ED",
-          shortName:  "html-transcript",
+          specStatus: "unofficial",
+	  edDraftURI: "http://chaals.github.io/html-transcript/html-transcript-src.html",
+//          shortName:  "html-transcript",
           editors: [
                 {   name:       "Chaals McCathie Nevile",
 //                    url:        "http://berjon.com/",
@@ -40,20 +41,22 @@
     
     <section class='informative'>
       <h2>Introduction</h2>
-      <p>
-        [[HTML5]] allows the use of audio or video, and includes mechanisms for associating multiple timed tracks. But in the case where there is a transcript which may not include timing information, there is no way to provide an explicit association. 
-      </p>
-    </section>
-    
-    <section class='informative'>
-      <h2>Use cases and requirements</h2>
-      <p>
-        A set of <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a> has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others. 
-      </p>
+      <p>[[HTML5]] allows the use of audio or video, and includes mechanisms for associating multiple timed tracks. But in the case where there is a transcript which <em class="rfc2119">may</em> not include timing information, there is no way to provide an explicit association.</p>
     </section>
 
-<section class="informative example">
-<pre><code>&lt;video controls&gt;
+    <section id='conformance'>
+      <p>Throughout this document the terms <em class="rfc2119">must</em>, <em class="rfc2119">should</em>, and <em class="rfc2119">may</em>, are to be interpreted in accordance with [[RFC2119]].</p>
+    </section>
+    
+   
+    <section class='informative'>
+      <h2>Use cases and requirements</h2>
+      <p>A set of <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a> has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others.</p>
+    </section>
+
+    <section>
+      <h2>Example</h2>
+      <pre class="highlight example"><code>&lt;video controls&gt;
  &lt;source src="video.rm"&gt;
   &lt;!-- A link to a transcript within the same document --&gt;
  &lt;relateTranscript title="English transcript" href="#theText"&gt;
@@ -66,19 +69,13 @@
 &lt;transcript id="theText"&gt;This is the english language
  transcript...
 &lt;/transcript&gt;</code></pre>
-</section>
-    
-    <section id='conformance'>
-      <p>
-        There are currently no conformance criteria.
-      </p>
+      <p>Note, this example uses the name <code>relateTranscript</code> for the element that will hopefully not be the name chosen</p>
     </section>
     
     <section>
-      <h2>transcript</h2>
-      <p>
-        So: track/kind? a/rel? something else?
-      </p>
+      <h2>Transcripts</h2>
+      <p>A <dfn>transcript</dfn> <em class="rfc2119">may</em> include timing information, machine-readable or otherwise.</p>
+      <p>So: <code>&lt;track kind=""&gt;</code>? <code>&lt;a rel="transcript"&gt;</code>? something else?</p>
 
     </section>
   </body>
