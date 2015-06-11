@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>A transcript extension for HTML</title>
-    <meta charset='utf-8'>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
-            async class='remove'></script>
-    <script class='remove'>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
+    <script class="remove">
       var respecConfig = {
           specStatus: "unofficial",
 	  edDraftURI: "http://chaals.github.io/html-transcript/html-transcript-src.html",
@@ -26,34 +25,28 @@
     </script>
   </head>
   <body>
-    <section id='abstract'>
-      <p>
-        This document describes an extension to HTML which explicitly identifies a transcript linked to a media object such as audio or video.
-      </p>
+    <section id="abstract">
+      <p> This document describes an extension to HTML which explicitly identifies a transcript linked to a media object such as audio or
+        video. </p>
     </section>
-
-    <section id='sotd'>
-      <p>
-        This is an initial editors' draft made 
-        possible through nanoethanol implants.
-      </p>
+    <section id="sotd">
+      <p> This is an initial editors' draft made possible through nanoethanol implants. </p>
     </section>
-    
-    <section class='informative'>
+    <section class="informative">
       <h2>Introduction</h2>
-      <p>[[HTML5]] allows the use of audio or video, and includes mechanisms for associating multiple timed tracks. But in the case where there is a transcript which <em class="rfc2119">may</em> not include timing information, there is no way to provide an explicit association.</p>
+      <p>[[HTML5]] allows the use of audio or video, and includes mechanisms for associating multiple timed tracks. But in the case where
+        there is a transcript which <em class="rfc2119">may</em> not include timing information, there is no way to provide an explicit
+        association.</p>
     </section>
-
-    <section id='conformance'>
-      <p>Throughout this document the terms <em class="rfc2119">must</em>, <em class="rfc2119">should</em>, and <em class="rfc2119">may</em>, are to be interpreted in accordance with [[RFC2119]].</p>
+    <section id="conformance">
+      <p>Throughout this document the terms <em class="rfc2119">must</em> and <em class="rfc2119">may</em> <em class="rfc2119">must</em>
+        be interpreted in accordance with [[RFC2119]].</p>
     </section>
-    
-   
-    <section class='informative'>
+    <section class="informative">
       <h2>Use cases and requirements</h2>
-      <p>A set of <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a> has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others.</p>
+      <p>A set of <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a>
+        has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others.</p>
     </section>
-
     <section>
       <h2>Example</h2>
       <pre class="highlight example"><code>&lt;video controls&gt;
@@ -69,18 +62,19 @@
 &lt;transcript id="theText"&gt;This is the english language
  transcript...
 &lt;/transcript&gt;</code></pre>
-      <p>Note, this example uses the name <code>relateTranscript</code> for the element that will hopefully not be the name chosen</p>
+      <p>Note, this example uses the name <code>relateTranscript</code> for the element that will hopefully not be the name chosen, and
+        uses a putative <code>transcript</code> element to identify a transcript that is in the page.</p>
     </section>
-    
     <section>
       <h2>Transcripts</h2>
       <p>A <dfn>transcript</dfn> <em class="rfc2119">may</em> include timing information, machine-readable or otherwise.</p>
       <p>So: <code>&lt;track kind=""&gt;</code>? <code>&lt;a rel="transcript"&gt;</code>? something else?</p>
-
     </section>
-<section class="informative">
-<p>The editor would like to acknowledge direct contributions to this document by:</p>
-<p>Paul Cotton, Daniel Davis, John Foliot, Edward O'Connor, Janina Sajka, Léonie Watson</p>
-<p>The editor would like to apologise to anybody whose name was left out of this list, and invites corrections.</p>
+    <section class="informative">
+      <h2>Acknowledgements</h2>
+      <p>The editor would like to acknowledge direct contributions to this document by:</p>
+      <p>Paul Cotton, Daniel Davis, John Foliot, Edward O'Connor, Janina Sajka, Léonie Watson</p>
+      <p>The editor would like to apologise to anybody whose name was left out of this list, and invites corrections.</p>
+    </section>
   </body>
 </html>
