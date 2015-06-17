@@ -23,6 +23,9 @@
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/40318/status",
       };
     </script>
+    <style>
+      .element {border-left: solid #99f 0.25em;
+      padding: .5em 1em; background-color: #f4f4fa;}</style>
   </head>
   <body>
     <section id="abstract">
@@ -48,15 +51,39 @@
         has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others.</p>
     </section>
     <section>
-      <h2>Transcripts</h2>
-      <p>A <dfn>transcript</dfn> <em class="rfc2119">may</em> include timing information, machine-readable or otherwise. The preferred
-        solution includes the link to the transcript within the media element for which it is a transcript, and also allows for a transcript
-        to be included on the page in which the media object is embedded.</p>
-      <p>So: <code>&lt;track kind=""&gt;</code>? <code>&lt;a rel="transcript"&gt;</code>? something else?</p>
+      <h2>Denoting a transcript</h2>
+      <section id="the-transcript-element" class="element">
+        <h4>The <dfn><code>transcript</code></dfn> element</h4>
+        <dl>
+          <dt><a data-anolis-xref="element-dfn-categories" href="http://www.w3.org/TR/html5/dom.html#element-dfn-categories">Categories</a>:</dt>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#flow-content-1">Flow content</a>.</dd>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#palpable-content-0">Palpable content</a>.</dd>
+          <dt><a data-anolis-xref="element-dfn-contexts" href="http://www.w3.org/TR/html5/dom.html#element-dfn-contexts">Contexts in which
+              this element can be used</a>:</dt>
+          <dd>Where <a href="http://www.w3.org/TR/html5/dom.html#flow-content-1">flow content</a> is expected.</dd>
+          <dt><a data-anolis-xref="element-dfn-content-model" href="http://www.w3.org/TR/html5/dom.html#element-dfn-content-model">Content
+              model</a>:</dt>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#flow-content-1">Flow content</a>.</dd>
+          <dt><a data-anolis-xref="element-dfn-attributes" href="http://www.w3.org/TR/html5/dom.html#element-dfn-attributes">Content
+              attributes</a>:</dt>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#global-attributes">Global attributes</a></dd>
+          <dt><a data-anolis-xref="element-dfn-tag-omission" href="http://www.w3.org/TR/html5/dom.html#element-dfn-tag-omission">Tag
+              omission in text/html</a>:</dt>
+          <dd>Neither tag is omissible</dd>
+          <dt>Allowed <a href="http://www.w3.org/TR/html5/dom.html#aria-role-attribute">ARIA role attribute</a> values:</dt>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#allowed-aria-roles,-states-and-properties" style="color: rgb(102, 0, 153); background: transparent;">Any
+              role value</a>.</dd>
+          <dt>Allowed <a href="http://www.w3.org/TR/html5/dom.html#state-and-property-attributes">ARIA state and property attributes</a>:</dt>
+          <dd><a href="http://www.w3.org/TR/html5/dom.html#index-aria-global">Global aria-* attributes</a></dd>
+          <dd>Any <code title="">aria-*</code> attributes <a href="http://www.w3.org/TR/html5/dom.html#allowed-aria-roles,-states-and-properties">applicable
+              to the allowed roles</a>.</dd>
+          <dt><a data-anolis-xref="element-dfn-dom" href="http://www.w3.org/TR/html5/dom.html#element-dfn-dom">DOM interface</a>:</dt>
+          <dd>
+          </dd>
+        </dl>
+      </section>
     </section>
     <section>
-      <h2>Example</h2>
-      <pre class="highlight example"><code>&lt;video controls&gt;
   &lt;source src="video.rm"&gt;
   &lt;!-- A link to a transcript within the same document --&gt;
     &lt;<strong>relateTranscript</strong> title="English transcript" href="#theText"&gt;
@@ -69,8 +96,6 @@
 &lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
 &lt;/<strong>transcript</strong>&gt;</code></pre>
-      <p>Note, this example uses the name <code>relateTranscript</code> for the element that will hopefully not be the name chosen, and
-        uses a putative <code>transcript</code> element to identify a transcript that is in the page.</p>
     </section>
     <section class="informative">
       <h2>Acknowledgements</h2>
