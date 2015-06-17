@@ -95,7 +95,7 @@
       <p class="issue">Several possible mechanisms have been suggested:</p>
       <section>
         <h3>Approach 1: Extending <code>track</code></h3>
-        <p>Add <code>transcript</code> to the set of values defined for the <code>track</code> element. This is the simplest change to the
+        <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code> element. This is the simplest change to the
           existing specification. It would require adding an entry <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">to
             the table of defined values</a>, as follows:</p>
 
@@ -127,8 +127,8 @@
   &lt;!-- A link to an external transcript in french uses hreflang --&gt;
     &lt;track kind="transcript" hreflang="fr"
        href="http://transcripts.example.fr/qqchose#laTexte"
-       lang="fr" title="Transcription en francais"&gt;
-  &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
+       lang="fr" title="Transcription en français"&gt;
+  &lt;track kind="captions" src="#YouGetTheIdea,Right?" lang="ru"&gt;
 &lt;/video&gt;
 &lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
@@ -140,7 +140,7 @@
         <p>Add a new element to HTML representing a link to a transcript for the parent media resource. This requires choosing a name - in
           the following we have used <code>relateTranscript</code> as a placeholder name, to avoid conflicting with the proposed <code>transcript</code>
           container element - and defining a new element definition as follows:</p>
-        <section id="the-transcript-element" class="element">
+        <section id="the-relateTranscript-element" class="element">
           <h4>The <dfn><code>relateTranscript</code></dfn> element</h4>
           <dl>
             <dt><a data-anolis-xref="element-dfn-categories" href="http://www.w3.org/TR/html5/dom.html#element-dfn-categories">Categories</a>:</dt>
