@@ -98,32 +98,26 @@
         <p>Add <code>transcript</code> to the set of values defined for the <code>track</code> element. This is the simplest change to the
           existing specification. It would require adding an entry <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">to
             the table of defined values</a>, as follows:</p>
-        <p>
-          <meta charset="utf-8">
-        </p>
-        <table style="border-collapse: collapse; border-style: hidden hidden none; color: rgb(0, 0, 0); font-family: sans-serif; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
-          <thead style="border-bottom-style: solid;">
+
+        <table>
+          <thead>
             <tr>
-              <th style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;">Keyword</th>
-              <th style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;">State</th>
-              <th style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;">Brief
+              <th>Keyword</th>
+              <th>State</th>
+              <th>Brief
                 description</th>
             </tr>
           </thead>
-          <tbody style="border-bottom-style: solid;">
+          <tbody>
             <tr>
-              <td style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;"><dfn
-                  data-anolis-xref="attr-track-kind-keyword-metadata" id="attr-track-kind-keyword-metadata" style="font-weight: bold; font-style: normal;"><code
-                    style="font-size: inherit; font-family: monospace; font-variant: normal; color: rgb(217, 59, 0);">transcript</code></dfn></td>
-              <td style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;"><dfn
-                  data-anolis-xref="attr-track-kind-metadata" id="attr-track-kind-metadata" style="font-weight: bold; font-style: normal;">transcript</dfn></td>
-              <td style="font-family: sans-serif; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-bottom-width: thin; vertical-align: top; padding: 0.2em;">Tracks
-                intended to permit use independent of media source. May be displayed by the user agent instead of, or supplementary to, the
+              <td><dfn
+                  data-anolis-xref="attr-track-kind-keyword-metadata" id="attr-track-kind-keyword-metadata"><code>transcript</code></dfn></td>
+              <td><dfn data-anolis-xref="attr-track-kind-metadata" id="attr-track-kind-metadata">transcript</dfn></td>
+              <td>Tracks intended to permit use independent of media source. May be displayed by the user agent instead of, or supplementary to, the
                 media resource.</td>
             </tr>
           </tbody>
         </table>
-        <br class="Apple-interchange-newline">
         <section>
           <h4>Example 1. Extending <code>&lt;track&gt;</code></h4>
           <pre class="highlight example"><code>&lt;video controls&gt;
