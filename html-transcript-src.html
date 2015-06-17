@@ -94,7 +94,7 @@
         practice, or can serve to separate multiple transcripts collected in a single page.</p>
       <p class="issue">Several possible mechanisms have been suggested:</p>
       <section>
-        <h3>Approach 1: Extending <code>&lt;track&gt;</code></h3>
+        <h3>Approach 1: Extending <code>track</code></h3>
         <p>Add <code>transcript</code> to the set of values defined for the <code>track</code> element. This is the simplest change to the
           existing specification. It would require adding an entry <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">to
             the table of defined values</a>, as follows:</p>
@@ -119,7 +119,7 @@
           </tbody>
         </table>
         <section>
-          <h4>Example 1. Extending <code>&lt;track&gt;</code></h4>
+          <h4>Example 1. Extending allowable <code>track</code> <code>kind</code>s</h4>
           <pre class="highlight example"><code>&lt;video controls&gt;
   &lt;source src="video.rm"&gt;
   &lt;!-- A link to a transcript within the same document --&gt;
@@ -176,7 +176,7 @@
           </dl>
         </section>
         <section>
-          <h4>Example 2: Using a <code>&lt;relateTranscript&gt;</code> element</h4>
+          <h4>Example 2: Using a <code>relateTranscript</code> element</h4>
           <pre class="highlight example"><code>&lt;video controls&gt;
   &lt;source src="video.rm"&gt;
   &lt;!-- A link to a transcript within the same document --&gt;
