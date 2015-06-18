@@ -192,6 +192,14 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
+      <section>
+        <h3>Approach 3: Use the <code>source</code> <!--Luke--> element</h3>
+        <p>The <code>source</code> element represents a version of the media resource that
+can be presented as an alternative to others. This is what a transcript is.</p>
+        <p>This approach is not preferred as it will involve complex changes. The element currently allows a MIME <code>type</code> attribute and a <code>media</code> query that can be used to determine when to render a given version. However, although transcripts are
+likely to have MIME types that are different from those used for audio or video resources,
+relying on this difference as a heuristic seems a weak approach to identifying a transcript.</p>
+      </section>
     </section>
     <br>
     <section class="informative">
