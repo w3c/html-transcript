@@ -95,26 +95,23 @@
       <p class="issue">Several possible mechanisms have been suggested:</p>
       <section>
         <h3>Approach 1: Extending <code>track</code></h3>
-        <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code> element. This is the simplest change to the
-          existing specification. It would require adding an entry <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">to
+        <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
+          element. This is the simplest change to the existing specification. It would require adding an entry <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">to
             the table of defined values</a>, as follows:</p>
-
         <table>
           <thead>
             <tr>
               <th>Keyword</th>
               <th>State</th>
-              <th>Brief
-                description</th>
+              <th>Brief description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><dfn
-                  data-anolis-xref="attr-track-kind-keyword-metadata" id="attr-track-kind-keyword-metadata"><code>transcript</code></dfn></td>
+              <td><dfn data-anolis-xref="attr-track-kind-keyword-metadata" id="attr-track-kind-keyword-metadata"><code>transcript</code></dfn></td>
               <td><dfn data-anolis-xref="attr-track-kind-metadata" id="attr-track-kind-metadata">transcript</dfn></td>
-              <td>Tracks intended to permit use independent of media source. May be displayed by the user agent instead of, or supplementary to, the
-                media resource.</td>
+              <td>Tracks intended to permit use independent of media source. May be displayed by the user agent instead of, or supplementary
+                to, the media resource.</td>
             </tr>
           </tbody>
         </table>
@@ -193,12 +190,15 @@
         </section>
       </section>
       <section>
-        <h3>Approach 3: Use the <code>source</code> <!--Luke--> element</h3>
+        <h3>Approach 3: Use the <code>source</code>
+          <!--Luke--> element</h3>
         <p>The <code>source</code> element represents a version of the media resource that
-can be presented as an alternative to others. This is what a transcript is.</p>
-        <p>This approach is not preferred as it will involve complex changes. The element currently allows a MIME <code>type</code> attribute and a <code>media</code> query that can be used to determine when to render a given version. However, although transcripts are
-likely to have MIME types that are different from those used for audio or video resources,
-relying on this difference as a heuristic seems a weak approach to identifying a transcript.</p>
+          can be presented as an alternative to others. This is what a transcript is.</p>
+        <p>This approach is not preferred as it will involve complex changes. The element currently allows a MIME <code>type</code>
+          attribute and a <code>media</code> query that can be used to determine when to render a given version. However, although
+          transcripts are
+          likely to have MIME types that are different from those used for audio or video resources,
+          relying on this difference as a heuristic seems a weak approach to identifying a transcript.</p>
       </section>
     </section>
     <br>
