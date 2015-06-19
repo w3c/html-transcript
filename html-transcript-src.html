@@ -302,8 +302,48 @@
           transcripts are likely to have MIME types that are different from those used for audio or video resources, relying on this
           difference as a heuristic seems a weak approach to identifying a transcript.</p>
       </section>
+      <section>
+        <h3>Approach 4: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
+        <p>This meets the requirements, but requires defining a new value of <code>rel</code>, and changes to the <code>for</code>
+          attribute. </p>
+        <p>Separating the link from the video code requires developers to include it in the visible content of the page, which leads many
+          developers to try and hide it in the default presentation. A common result is that it is not available to people who need it, such
+          as users with low vision, or is invisible but can be activated, confusing users.</p>
+        <p>Separating the link from the block of code can lead to it being lost when the source is copied to be used elsewhere.</p>
+        <section>
+          <h4>Example 4: Using the <code>a</code> element with <code>rel</code> and <code>for</code> attribute</h4>
+          <pre class="highlight example"><code><code>&lt;p&gt;<br>  &lt;!-- A link to a transcript within the same document --&gt;
+    &lt;<strong>a rel="transcript" for="theVideo"</strong> title="English transcript" href="#theText"&gt;Transcript below&lt;/a&gt;,
+  &lt;!-- A link to an external transcript in french uses hreflang --&gt;
+    &lt;a rel="transcript" for="theVideo" hreflang="fr"
+       href="http://transcripts.example.fr/qqchose#laTexte"
+       lang="fr" title="Transcription en francais"&gt;transcription aussi disponible en français&lt;/a&gt;.<br>&lt;/p&gt;
+</code>&lt;video controls <strong>id="theVideo"</strong>&gt;
+  &lt;source src="video.rm"&gt;
+  &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
+&lt;/video&gt;
+&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+  transcript...
+&lt;/<strong>transcript</strong>&gt;</code></pre>
+        </section>
+      </section>
+      <section>
+        <h3>Approach 5: Use an attribute</h3>
+        <p>An attribute could be defined, analagous to the <code>longdesc</code> attribute for images. </p>
+        <p>This approach is not preferred as it makes it very difficult to meet all of the multiple transcripts requirement. Allowing a
+          space-separated list of urls does not provide any information to choose which transcript to link to.</p>
+        <section>
+          <h4>Example 5: Using a <code>relateTranscript</code> attribute</h4>
+          <pre class="highlight example"><code>&lt;video controls <strong>relateTranscript="#theText </strong></code><code><strong><code>http://transcripts.example.fr/qqchose#laTexte</code>"</strong>&gt;
+  &lt;source src="video.rm"&gt;
+  &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
+&lt;/video&gt;
+&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+  transcript...
+&lt;/<strong>transcript</strong>&gt;</code></pre>
+        </section>
+      </section>
     </section>
-    <br>
     <section class="informative">
       <h2>Acknowledgements</h2>
       <p>The editor would like to acknowledge the awe-filled <a href="http://w3.org/respec">respec</a>, <a href="http://github.com">github</a>,
