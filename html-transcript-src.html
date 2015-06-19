@@ -155,7 +155,8 @@
     </section>
     <section>
       <h2>Denoting a transcript</h2>
-      <p>This specification defines a new <code>transcript</code> element as follows:</p>
+      <p>To meet the <a href="#req-delineation">delineation requirement</a> this specification defines a new <code>transcript</code>
+        element as follows:</p>
       <section id="the-transcript-element" class="element">
         <h4>The <dfn><code>transcript</code></dfn> element</h4>
         <dl>
@@ -230,7 +231,7 @@
        lang="fr" title="Transcription en français"&gt;
   &lt;track kind="captions" src="#YouGetTheIdea,Right?" lang="ru"&gt;
 &lt;/video&gt;
-&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+<br>&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
@@ -254,13 +255,14 @@
             <dt><a data-anolis-xref="element-dfn-attributes" href="http://www.w3.org/TR/html5/dom.html#element-dfn-attributes">Content
                 attributes</a>:</dt>
             <dd><a href="http://www.w3.org/TR/html5/dom.html#global-attributes">Global attributes</a></dd>
-            <dd><code>src</code> - Address of the transcript</dd>
+            <dd><code>src</code> - URL of the transcript</dd>
             <dd><code>type</code> - the MIME type of the transcript</dd>
             <dt><a data-anolis-xref="element-dfn-tag-omission" href="http://www.w3.org/TR/html5/dom.html#element-dfn-tag-omission">Tag
                 omission in text/html</a>:</dt>
             <dd>No <a href="http://www.w3.org/TR/html5/syntax.html#syntax-end-tag">end tag</a></dd>
             <dt>Allowed <a href="http://www.w3.org/TR/html5/dom.html#aria-role-attribute">ARIA role attribute</a> values:</dt>
-            <dd class="issue">This could be rendered as a liveregion controlled by the media resource, or a control for the media resource.</dd>
+            <dd class="issue">This could be rendered as a <code>liveregion</code> controlled by the media resource, or a control for the
+              media resource.</dd>
             <dt>Allowed <a href="http://www.w3.org/TR/html5/dom.html#state-and-property-attributes">ARIA state and property attributes</a>:</dt>
             <dd class="issue">rendering, interactive states?</dd>
             <dd>Any <code title="">aria-*</code> attributes <a href="http://www.w3.org/TR/html5/dom.html#allowed-aria-roles,-states-and-properties">applicable
@@ -287,7 +289,7 @@
        lang="fr" title="Transcription en francais"&gt;
   &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
 &lt;/video&gt;
-&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+<br>&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
@@ -317,28 +319,26 @@
   &lt;!-- A link to an external transcript in french uses hreflang --&gt;
     &lt;a rel="transcript" for="theVideo" hreflang="fr"
        href="http://transcripts.example.fr/qqchose#laTexte"
-       lang="fr" title="Transcription en francais"&gt;transcription aussi disponible en français&lt;/a&gt;.<br>&lt;/p&gt;
-</code>&lt;video controls <strong>id="theVideo"</strong>&gt;
+       lang="fr" title="Transcription en francais"&gt;transcription aussi disponible en français&lt;/a&gt;.<br>&lt;/p&gt;<br><br></code>&lt;video controls <strong>id="theVideo"</strong>&gt;
   &lt;source src="video.rm"&gt;
   &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
-&lt;/video&gt;
-&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+&lt;/video&gt;<br><br>&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
       <section>
         <h3>Approach 5: Use an attribute</h3>
-        <p>An attribute could be defined, analagous to the <code>longdesc</code> attribute for images. </p>
-        <p>This approach is not preferred as it makes it very difficult to meet all of the multiple transcripts requirement. Allowing a
-          space-separated list of urls does not provide any information to choose which transcript to link to.</p>
+        <p>An attribute could be defined, analogous to the <code>longdesc</code> attribute for images. </p>
+        <p>This approach is not preferred as it makes it very difficult to meet all of the <a href="#req-multiple">multiple transcripts
+            requirement</a>. Allowing a space-separated list of urls does not provide any information to help choose which transcript to
+          link to, or use.</p>
         <section>
           <h4>Example 5: Using a <code>relateTranscript</code> attribute</h4>
           <pre class="highlight example"><code>&lt;video controls <strong>relateTranscript="#theText </strong></code><code><strong><code>http://transcripts.example.fr/qqchose#laTexte</code>"</strong>&gt;
   &lt;source src="video.rm"&gt;
   &lt;track kind="captions" src="YouGetTheIdea?Right" lang="ru"&gt;
-&lt;/video&gt;
-&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
+&lt;/video&gt;<br><br>&lt;<strong>transcript</strong> id="theText"&gt;This is the english language
   transcript...
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
