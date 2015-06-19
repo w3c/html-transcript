@@ -45,10 +45,113 @@
       <p>Throughout this document the terms <em class="rfc2119">must</em> and <em class="rfc2119">may</em> <em class="rfc2119">must</em>
         be interpreted in accordance with [[RFC2119]].</p>
     </section>
-    <section class="informative">
+    <section>
       <h2>Use cases and requirements</h2>
-      <p>A set of <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a>
-        has been developed by the HTML accessibility task force, and discussed with the HTML media task force and others.</p>
+      <section class="informative">
+        <p>Over a number of years <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_use_cases">use cases</a> and <a href="https://www.w3.org/WAI/PF/HTML/wiki/Full_Transcript#The_Requirements">requirements</a>
+          have been extensively discussed by the HTML Working Group, in particular by its accessibility and media task forces. The following
+          section is intended to provide a brief summary of the key information.</p>
+      </section>
+      <section class="informative">
+        <h3>Use cases</h3>
+        <dl>
+          <dt>Saving bandwidth - inline transcript</dt>
+          <dd>A user chooses to read a transcript included in the same page as a media resource, because their connection will not support
+            downloading the full media resource. Requires:
+            <dl>
+              <dt><a href="#req-explicit-relation">Explicit relation</a></dt>
+              <dd>Users who cannot determine from the default page formatting that part of the page is the transcript need a mechanism that
+                allows an assistive technology to do so</dd>
+              <dt><a href="#req-delineation">Delineation</a></dt>
+              <dd>Assistive technology needs a way to determine the extent of the transcript - i.e. where it begins and ends</dd>
+              <dt><a href="#req-optional">Optional Consumption</a></dt>
+              <dd>For assistive technology users, the ability to skip over the transcript e.g. when navigating through the page is important</dd>
+              <dt><a href="#req-inline">Inline transcript</a></dt>
+              <dd>This is assumed by this use case. For many users who are not relying on assistive technologies, seeing the transcript in
+                the page is sufficient to enable this use case.</dd>
+            </dl>
+          </dd>
+          <dt>Using the transcript for accessibility</dt>
+          <dd>A user reads a linked transcript because the media resource in its original format is inaccessible to them due to a
+            disability. Requires:
+            <dl>
+              <dt><a href="#req-explicit-relation">Explicit relation</a></dt>
+              <dd>The user needs a way to know that there is a transcript available. In certain cases such as where they have to make a
+                choice based on what kind of resource will be <em>more</em> accessible to them, they need a way for their assistive
+                technology to determine that there is a transcript.</dd>
+              <dt><a href="#req-optional">Optional consumption</a></dt>
+              <dd>It is important that the user not be forced to read the transcript every time they navigate the page - just as users are
+                not forced to re-watch a full video every time they scroll past it.</dd>
+            </dl>
+          </dd>
+          <dt>Interactive transcript as controller</dt>
+          <dd>A user agent renders a transcript which includes timing information alongside the media resource. Navigating to a particular
+            point in the transcript scrubs through the media resource to that point. Requires:
+            <dl>
+              <dt><a href="#req-explicit-relation">Explicit relation</a></dt>
+              <dd>The user agent needs to determine that a particular resource is a transcript</dd>
+              <dt><a href="#req-delineation">Delineation</a></dt>
+              <dd>The user agent needs to identify exactly the content that is part of the transcript</dd>
+              <dt><a href="#req-format-agnostic">Format agnostic</a></dt>
+              <dd>Publishers need to be able to provide transcripts in a format the user agent can use as a controller</dd>
+            </dl>
+          </dd>
+          <dt>Using a transcript to improve video/audio search</dt>
+          <dd>A search engine uses the explicit association of a transcript to collect textual information that can be reliably associated
+            with an audio or video resource, to improve discoverability of the resource through text-based search. Requires:
+            <dl>
+              <dt><a href="#req-explicit-relation">Explicit relation</a></dt>
+              <dd>The search engine needs to determine that a particular resource is a transcript</dd>
+            </dl>
+          </dd>
+          <dt>Increasing multilingual discovery of resources</dt>
+          <dd>A publisher produces multiple translated transcripts of a media resource in order to improve discoverability of and access to
+            the media resource. Requires:
+            <dl>
+              <dt><a href="#req-multiple">Multiple transcripts</a></dt>
+              <dd>The publisher needs to link multiple transcripts to the same media resource.</dd>
+              <dt><a href="#req-linked">Linked transcript</a></dt>
+              <dd>Many publishers do not want to include multiple transcripts in different languages inline in a page.</dd>
+            </dl>
+          </dd>
+          <dt>Use what is there</dt>
+          <dd>A publisher links a script which is available as PDF or Word document to provide a basic workable transcript for a media
+            resource that would otherwise be inaccessible to some users. Requires:
+            <dl>
+              <dt><a href="#req-format-agnostic">Format-agnostic</a></dt>
+              <dd>The publisher needs to be able to associate whatever resource is available</dd>
+              <dt><a href="#req-linked">Linked transcript</a></dt>
+              <dd>The publisher needs to be able to link resources which are not HTML. Content management workflows need to allow for
+                resources kept and published separately.</dd>
+            </dl>
+          </dd>
+        </dl>
+      </section>
+      <section>
+        <h3>Requirements</h3>
+        <dl>
+          <dt id="req-delineation">Delineation</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to determine which part of a larger resource such as an HTML page is the
+            transcript included within that resource.</dd>
+          <dt id="req-explicit-relation">Explicit relation</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to unambiguously determine that a resource is a transcript for a given media
+            resource</dd>
+          <dt id="req-format-agnostic">Format agnostic</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to use an arbitrary format for a transcript</dd>
+          <dt id="req-inline">Inline transcript</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to include the content transcript in the same page as a media resource</dd>
+          <dt id="req-linked">Linked transcript</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to link a media resource to an external transcript</dd>
+          <dt id="req-multiple">Multiple transcripts</dt>
+          <dd>It <em class="rfc2119">must</em> be possible to include more than one transcript for a media resource. It <em class="rfc2119">should</em>
+            be possible to differentiate transcripts for a given media resource to allow easy selection of the appropriate transcript for a
+            given use case</dd>
+          <dt id="req-optional">Optional Consumption</dt>
+          <dd>It <em class="rfc2119">should</em> be possible for a user to choose whether or not to read the transcript. Note that this is
+            particularly important for users interacting with their system through speech output, or for whom large amounts of text make
+            content substantially more difficult to use.</dd>
+        </dl>
+      </section>
     </section>
     <section>
       <h2>Denoting a transcript</h2>
@@ -192,13 +295,12 @@
       <section>
         <h3>Approach 3: Use the <code>source</code>
           <!--Luke--> element</h3>
-        <p>The <code>source</code> element represents a version of the media resource that
-          can be presented as an alternative to others. This is what a transcript is.</p>
+        <p>The <code>source</code> element represents a version of the media resource that can be presented as an alternative to others.
+          This is what a transcript is.</p>
         <p>This approach is not preferred as it will involve complex changes. The element currently allows a MIME <code>type</code>
           attribute and a <code>media</code> query that can be used to determine when to render a given version. However, although
-          transcripts are
-          likely to have MIME types that are different from those used for audio or video resources,
-          relying on this difference as a heuristic seems a weak approach to identifying a transcript.</p>
+          transcripts are likely to have MIME types that are different from those used for audio or video resources, relying on this
+          difference as a heuristic seems a weak approach to identifying a transcript.</p>
       </section>
     </section>
     <br>
