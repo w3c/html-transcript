@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>A transcript extension for HTML</title>
     <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
     <script class="remove">
@@ -314,6 +314,7 @@
         <p>Separating the link from the block of code can lead to it being lost when the source is copied to be used elsewhere.</p>
         <section>
           <h4>Example 4: Using the <code>a</code> element with <code>rel</code> and <code>for</code> attribute</h4>
+          <!-- No, there is no example 3, but it should be possible to heuristically determine why-->
           <pre class="highlight example"><code><code>&lt;p&gt;<br>  &lt;!-- A link to a transcript within the same document --&gt;
     &lt;<strong>a rel="transcript" for="theVideo"</strong> title="English transcript" href="#theText"&gt;Transcript below&lt;/a&gt;,
   &lt;!-- A link to an external transcript in french uses hreflang --&gt;
