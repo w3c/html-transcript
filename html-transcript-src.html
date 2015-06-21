@@ -196,7 +196,8 @@
         solution includes the link to the transcript within the media element for which it is a transcript, and adds a transcript element as
         a container for a transcript. This can be included on the page in which the media object is embedded, which is a common use in
         practice, or can serve to separate multiple transcripts collected in a single page.</p>
-      <p class="issue">Several possible mechanisms have been suggested:</p>
+      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. Several possible mechanisms
+        that have been suggested are included here to allow comparison of different approaches:</p>
       <section>
         <h3>Approach 1: Extending <code>track</code></h3>
         <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
@@ -219,6 +220,12 @@
             </tr>
           </tbody>
         </table>
+        <p class="issue">An objection that has been raised to this method is that it requires a potential change to the <a href="http://www.w3.org/TR/html5/embedded-content-0.html#the-track-element">current
+            definition of the <code>track</code> element in HTML5</a>, which says that it <q cite="http://www.w3.org/TR/html5/embedded-content-0.html#the-track-element">allows
+            authors to specify explicit external timed <a data-anolis-xref="text track" href="http://www.w3.org/TR/html5/embedded-content-0.html#text-track">
+              text tracks</a> for <a data-anolis-xref="media element" href="http://www.w3.org/TR/html5/embedded-content-0.html#media-element">media
+              elements</a></q> unless a transcript with no timing information included can be considered a "timed text track". However, this
+          definition also appears to conflict with the allowed <code>metadata</code> state for tracks, so will probably be changed anyway.</p>
         <section>
           <h4>Example 1. Extending allowable <code>track</code> <code>kind</code>s</h4>
           <pre class="highlight example"><code>&lt;video controls&gt;
@@ -299,19 +306,21 @@
           <!--Luke--> element</h3>
         <p>The <code>source</code> element represents a version of the media resource that can be presented as an alternative to others.
           This is what a transcript is.</p>
-        <p>This approach is not preferred as it will involve complex changes. The element currently allows a MIME <code>type</code>
-          attribute and a <code>media</code> query that can be used to determine when to render a given version. However, although
-          transcripts are likely to have MIME types that are different from those used for audio or video resources, relying on this
-          difference as a heuristic seems a weak approach to identifying a transcript.</p>
+        <p>This approach is not preferred as it will involve complex changes. </p>
+        <p class="issue">The element currently allows a MIME <code>type</code> attribute and a <code>media</code> query that can be used
+          to determine when to render a given version. However, although transcripts are likely to have MIME types that are different from
+          those used for audio or video resources, relying on this difference as a heuristic seems a weak approach to identifying a
+          transcript.</p>
       </section>
       <section>
         <h3>Approach 4: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
         <p>This meets the requirements, but requires defining a new value of <code>rel</code>, and changes to the <code>for</code>
           attribute. </p>
-        <p>Separating the link from the video code requires developers to include it in the visible content of the page, which leads many
-          developers to try and hide it in the default presentation. A common result is that it is not available to people who need it, such
-          as users with low vision, or is invisible but can be activated, confusing users.</p>
-        <p>Separating the link from the block of code can lead to it being lost when the source is copied to be used elsewhere.</p>
+        <p class="issue">Separating the link from the video code requires developers to include it in the visible content of the page, which
+          leads many developers to try and hide it in the default presentation. A common result is that it is not available to people who
+          need it, such as users with low vision, or is invisible but can be activated, confusing users.</p>
+        <p class="issue">Separating the link from the block of code can lead to it being lost when the source is copied to be used
+          elsewhere.</p>
         <section>
           <h4>Example 4: Using the <code>a</code> element with <code>rel</code> and <code>for</code> attribute</h4>
           <!-- No, there is no example 3, but it should be possible to heuristically determine why-->
@@ -332,8 +341,9 @@
         <h3>Approach 5: Use an attribute</h3>
         <p>An attribute could be defined, analogous to the <code>longdesc</code> attribute for images. </p>
         <p>This approach is not preferred as it makes it very difficult to meet all of the <a href="#req-multiple">multiple transcripts
-            requirement</a>. Allowing a space-separated list of urls does not provide any information to help choose which transcript to
-          link to, or use.</p>
+            requirement</a>. </p>
+        <p class="issue">Allowing a space-separated list of URLs does not provide any information to help choose which transcript to link
+          to, or use.</p>
         <section>
           <h4>Example 5: Using a <code>relateTranscript</code> attribute</h4>
           <pre class="highlight example"><code>&lt;video controls <strong>relateTranscript="#theText </strong></code><code><strong><code>http://transcripts.example.fr/qqchose#laTexte</code>"</strong>&gt;
