@@ -6,7 +6,7 @@
     <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
     <script class="remove">
       var respecConfig = {
-          specStatus: "unofficial",
+          specStatus: "ED",
 	  edDraftURI: "http://w3c.github.io/html-transcript/html-transcript-src.html",
 //          shortName:  "html-transcript",
           editors: [
@@ -33,7 +33,8 @@
         video. </p>
     </section>
     <section id="sotd">
-      <p>This 2 July editors' draft is the first version adopted by the HTML Accessibility Task Force. The group expects to clarify that it will reduce the number of proposed options for linking transcripts to one before requesting Candidate Recommendation status, then request consensus to publish this as a First Public Working Draft.</p>
+      <p>This is the 3 July editors' draft. The group expects to clarify that it will reduce the number of proposed options for linking transcripts to one before requesting Candidate Recommendation status, then request consensus to publish this as a First Public Working Draft.</p>
+<p>While Github pull requests are welcome to allow specific changes to be incorporated, the HTML Accessibility Task Force uses <a href="https://www.w3.org/WAI/PF/HTML/track/products/7">a publicly available tracker installation</a> to track issues on this specification. Please <em>do not</em> use the github issues associated with the repository, as issues there may not be tracked in a timely manner.</p> 
     </section>
     <section class="informative">
       <h2>Introduction</h2>
@@ -196,8 +197,8 @@
         solution includes the link to the transcript within the media element for which it is a transcript, and adds a transcript element as
         a container for a transcript. This can be included on the page in which the media object is embedded, which is a common use in
         practice, or can serve to separate multiple transcripts collected in a single page.</p>
-      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. Several possible mechanisms
-        that have been suggested are included here to allow comparison of different approaches:</p>
+      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. Several suggested mechanisms
+        are included here to allow comparison of different approaches. Feedback is sought on whether a given approach should or should not be chosen, and why.</p>
       <section>
         <h3>Approach 1: Extending <code>track</code></h3>
         <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
@@ -359,7 +360,7 @@
       <h2>Acknowledgements</h2>
       <p>The editor would like to acknowledge the awe-filled <a href="http://w3.org/respec">respec</a>, <a href="http://github.com">github</a>,
         and <a href="http://bluegriffon.org">BlueGriffon</a>, as well as direct contributions to this document by:</p>
-      <p>Paul Cotton, Daniel Davis, Joan-Marie Diggs, John Foliot, Edward O'Connor, Janina Sajka, Richard Schwerdtfeger, Cynthia Shelly,
+      <p>Paul Cotton, Daniel Davis, Joan-Marie Diggs, John Foliot, Edward O'Connor, Silvia Pfeiffer, Janina Sajka, Richard Schwerdtfeger, Cynthia Shelly,
         Léonie Watson</p>
       <p>The editor would like to apologise to anybody whose name was left out of this list, and invites corrections.</p>
     </section>
