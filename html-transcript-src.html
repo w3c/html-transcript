@@ -11,7 +11,7 @@
 //          shortName:  "html-transcript",
           editors: [
                 {   name:       "Chaals McCathie Nevile",
-//                    url:        "http://berjon.com/",
+//                  //  url:        "http://berjon.com/",
                     company:    "Yandex",
                     companyURL: "http://yandex.com/" }
           ],
@@ -33,14 +33,14 @@
         video. </p>
     </section>
     <section id="sotd">
-      <p>This is the 3 July editors' draft. The group expects to clarify that it will reduce the number of proposed options for linking transcripts to one before requesting Candidate Recommendation status, then request consensus to publish this as a First Public Working Draft.</p>
-<p>While Github pull requests are welcome to allow specific changes to be incorporated, the HTML Accessibility Task Force uses <a href="https://www.w3.org/WAI/PF/HTML/track/products/7">a publicly available tracker installation</a> to track issues on this specification. Please <em>do not</em> use the github issues associated with the repository, as issues there may not be tracked in a timely manner.</p> 
+      <p>This is the 3 July editors' draft. The editor plans to request consensus to publish this as a First Public Working Draft.</p>
+<p>While Github pull requests are welcome for specific proposed changes, the HTML Accessibility Task Force uses <a href="https://www.w3.org/WAI/PF/HTML/track/products/7">a publicly available tracker installation</a> to track issues on this specification. Please <em>do not</em> use the github issues associated with the repository, as issues there may not be tracked in a timely manner.</p> 
     </section>
     <section class="informative">
       <h2>Introduction</h2>
       <p>[[HTML5]] allows the use of audio or video, and includes mechanisms for associating multiple timed tracks. But in the case where
-        there is a transcript which <em class="rfc2119">may</em> not include timing information, there is no way to provide an explicit
-        association.</p>
+        there is a transcript, which <em class="rfc2119">may not</em> include timing information, there is no way to provide an explicit
+        association between it and its associated media element.</p>
     </section>
     <section id="conformance">
       <p>Throughout this document the terms <em class="rfc2119">must</em> and <em class="rfc2119">may</em> <em class="rfc2119">must</em>
@@ -197,13 +197,11 @@
         solution includes the link to the transcript within the media element for which it is a transcript, and adds a transcript element as
         a container for a transcript. This can be included on the page in which the media object is embedded, which is a common use in
         practice, or can serve to separate multiple transcripts collected in a single page.</p>
-      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. Several suggested mechanisms
-        are included here to allow comparison of different approaches. Feedback is sought on whether a given approach should or should not be chosen, and why.</p>
       <section>
-        <h3>Approach 1: Extending <code>track</code></h3>
-        <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
-          element. This is the simplest change to the existing specification. It would require adding an entry to the <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">table
-            of defined values</a> in [[!HTML5]], as follows:</p>
+        <h3>Extending <code>track</code> to allow <code>kind="<var>transcript</var>"</code></h3>
+        <p>This proposal adds <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
+          element. This requires adding an entry to the <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">table
+            of values defined for the attribute</a> in [[!HTML5]], as follows:</p>
         <table>
           <thead>
             <tr>
@@ -244,8 +242,20 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
-      <section>
-        <h3>Approach 2: create a new element</h3>
+    </section>
+    <section class="informative">
+      <h2>Acknowledgements</h2>
+      <p>The editor would like to acknowledge the awe-filled <a href="http://w3.org/respec">respec</a>, <a href="http://github.com">github</a>,
+        and <a href="http://bluegriffon.org">BlueGriffon</a>, as well as direct contributions to this document by:</p>
+      <p>Paul Cotton, Daniel Davis, Joan-Marie Diggs, Steve Faulkner, John Foliot, Edward O'Connor, Silvia Pfeiffer, Janina Sajka, Richard Schwerdtfeger, Cynthia Shelly,
+        Léonie Watson, and W3C's HTML Media Task Force</p>
+      <p>The editor would like to apologise to anybody whose name was left out of this list, and invites corrections.</p>
+    </section>
+    <section class="informative">
+      <h2>Appendix: Alternative approaches</h2>
+      <p>Several other approaches have been considered to meeting the requirements. They are included here in outline, with some notes, for completeness. This appendix is expected to be removed before requesting advancement to Candidate Recommendation.</p>
+      <section style="width:80%; padding:2em 10%; background-color: #fffdfd">
+        <h3>Alternative approach: create a new element</h3>
         <p>Add a new element to HTML representing a link to a transcript for the parent media resource. This requires choosing a name - in
           the following we have used <code>relateTranscript</code> as a placeholder name, to avoid conflicting with the proposed <code>transcript</code>
           container element - and defining a new element definition as follows:</p>
@@ -302,8 +312,8 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
-      <section>
-        <h3>Approach 3: Use the <code>source</code>
+      <section style="width:80%; padding:2em 10%; background-color: #fffdfd">
+        <h3>Alternative approach: Use the <code>source</code>
           <!--Luke--> element</h3>
         <p>The <code>source</code> element represents a version of the media resource that can be presented as an alternative to others.
           This is what a transcript is.</p>
@@ -313,8 +323,8 @@
           those used for audio or video resources, relying on this difference as a heuristic seems a weak approach to identifying a
           transcript.</p>
       </section>
-      <section>
-        <h3>Approach 4: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
+      <section style="width:80%; padding:2em 10%; background-color: #fffdfd">
+        <h3>Alternative approach: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
         <p>This meets the requirements, but requires defining a new value of <code>rel</code>, and changes to the <code>for</code>
           attribute. </p>
         <p class="issue">Separating the link from the video code requires developers to include it in the visible content of the page, which
@@ -338,8 +348,8 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
-      <section>
-        <h3>Approach 5: Use an attribute</h3>
+      <section style="width:80%; padding:2em 10%; background-color: #fffdfd">
+        <h3>Alternative approach: Use an attribute</h3>
         <p>An attribute could be defined, analogous to the <code>longdesc</code> attribute for images. </p>
         <p>This approach is not preferred as it makes it very difficult to meet all of the <a href="#req-multiple">multiple transcripts
             requirement</a>. </p>
@@ -355,14 +365,6 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
-    </section>
-    <section class="informative">
-      <h2>Acknowledgements</h2>
-      <p>The editor would like to acknowledge the awe-filled <a href="http://w3.org/respec">respec</a>, <a href="http://github.com">github</a>,
-        and <a href="http://bluegriffon.org">BlueGriffon</a>, as well as direct contributions to this document by:</p>
-      <p>Paul Cotton, Daniel Davis, Joan-Marie Diggs, John Foliot, Edward O'Connor, Silvia Pfeiffer, Janina Sajka, Richard Schwerdtfeger, Cynthia Shelly,
-        Léonie Watson</p>
-      <p>The editor would like to apologise to anybody whose name was left out of this list, and invites corrections.</p>
-    </section>
+    </section>   
   </body>
 </html>
